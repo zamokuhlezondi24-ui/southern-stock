@@ -1,443 +1,1092 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#071028] text-white">
+    <main className="bg-white">
 
       {/* NAVBAR */}
-      <nav className="sticky top-0 z-50 flex justify-between items-center px-10 py-6 border-b border-gray-800 bg-[#071028]/90 backdrop-blur-md">
-       <div className="logo">
-         <img src="/logo.png2.png" alt="Southern Stock Logo" />
-       </div>
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div className="max-w-[1400px] mx-auto px-10 py-5 flex items-center justify-between">
 
-        <div className="flex gap-8 text-sm">
+          {/* LOGO */}
+          <div className="flex items-center gap-4">
+            <img
+             src="/logo.png"
+             alt="Southern Stock Logo"
+             className="w-20 h-auto object-contain"
+           />
 
-          <a
-            href="#home"
-            className="hover:text-yellow-500 transition"
-          >
-            Home
-          </a>
-
-          <a
-            href="#about"
-            className="hover:text-yellow-500 transition"
-          >
-            About
-          </a>
-
-          <a
-            href="#services"
-            className="hover:text-yellow-500 transition"
-          >
-            Services
-          </a>
-
-          <a
-            href="#industries"
-            className="hover:text-yellow-500 transition"
-          >
-            Industries
-          </a>
-
-          <a
-            href="#contact"
-            className="hover:text-yellow-500 transition"
-          >
-            Contact
-          </a>
-
-        </div>
-
-      </nav>
-
-      {/* HERO SECTION */}
-      <section
-        id="home"
-        className="relative px-10 py-32 bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(7,16,40,0.88), rgba(7,16,40,0.92)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')",
-        }}
-      >
-
-        <div className="max-w-7xl mx-auto">
-
-          <p className="text-yellow-500 uppercase tracking-widest mb-4">
-            Southern Stock Pty Ltd
-          </p>
-
-          <h1 className="text-7xl font-bold leading-tight max-w-5xl">
-            Innovative IT Solutions That Drive Your Business Forward
-          </h1>
-
-          <p className="text-gray-300 mt-8 text-xl max-w-2xl leading-relaxed">
-            Outsourcing software development experts delivering
-            world-class websites, mobile apps, cybersecurity
-            and enterprise IT solutions globally.
-          </p>
-
-          <div className="flex gap-6 mt-10">
-
-            <a
-              href="#services"
-              className="bg-yellow-500 text-black px-8 py-4 rounded-lg font-semibold hover:bg-yellow-400 transition"
-            >
-              Our Services
-            </a>
-
-            <a
-              href="#about"
-              className="border border-white px-8 py-4 rounded-lg hover:bg-white hover:text-black transition"
-            >
-              About Us
-            </a>
-
+            <div>
+              <h1 className="text-2xl font-bold text-black tracking-wide">
+                SOUTHERN STOCK
+              </h1>
+              <p className="text-blue-600 text-sm">
+                Technology Solutions
+              </p>
+            </div>
           </div>
 
+          {/* MENU */}
+          <nav className="hidden lg:flex items-center gap-10 text-gray-700 font-medium text-lg">
+
+  <a href="#home" className="hover:text-blue-600 transition">
+    Home
+  </a>
+
+  <a href="#services" className="hover:text-blue-600 transition">
+    Services
+  </a>
+
+  <a href="#industries" className="hover:text-blue-600 transition">
+    Industries
+  </a>
+
+  <a href="#projects" className="hover:text-blue-600 transition">
+    Projects
+  </a>
+
+  <a href="#partners" className="hover:text-blue-600 transition">
+    Partners
+  </a>
+
+  <a href="#about" className="hover:text-blue-600 transition">
+    About Us
+  </a>
+
+  <a href="#contact" className="hover:text-blue-600 transition">
+    Contact
+  </a>
+
+</nav>
+
+          {/* BUTTON */}
+          <a
+  href="#contact"
+  className="bg-blue-600 hover:bg-blue-700 transition px-8 py-4 rounded-xl text-white font-semibold"
+>
+  Let's Talk →
+</a>
         </div>
+      </header>
+        {/* HERO */}
+<section 
+  id="home"
+  className="relative min-h-[720px] overflow-hidden"
+>
 
-      </section>
+  {/* MOVING BACKGROUND */}
+  <div
+    className="absolute inset-0 bg-cover bg-center scale-105 animate-[slowZoom_20s_ease-in-out_infinite]"
+    style={{
+      backgroundImage: "url('/hero-bg.jpg')",
+    }}
+  />
 
-      {/* STATS SECTION */}
-      <section className="grid grid-cols-2 md:grid-cols-4 gap-6 px-10 py-16 bg-[#0c1735]">
+  {/* DARK OVERLAY */}
+  <div className="absolute inset-0 bg-blue-950/55"></div>
 
-        <div className="border border-gray-800 p-6 rounded-xl">
-          <h2 className="text-4xl font-bold text-yellow-500">20+</h2>
-          <p className="text-gray-300 mt-2">Years IT Experience</p>
-        </div>
+  {/* CONTENT */}
+  <div className="relative z-10 max-w-[1400px] mx-auto px-16 h-[720px] grid lg:grid-cols-2 gap-12 items-center">
 
-        <div className="border border-gray-800 p-6 rounded-xl">
-          <h2 className="text-4xl font-bold text-yellow-500">100+</h2>
-          <p className="text-gray-300 mt-2">Projects Delivered</p>
-        </div>
+    {/* LEFT SIDE */}
+    <div className="text-white max-w-[620px]">
+      <p className="uppercase tracking-[4px] text-blue-300 text-sm mb-5">
+        TECHNOLOGY THAT DRIVES BUSINESS
+      </p>
 
-        <div className="border border-gray-800 p-6 rounded-xl">
-          <h2 className="text-4xl font-bold text-yellow-500">50+</h2>
-          <p className="text-gray-300 mt-2">Global Clients</p>
-        </div>
+      <h1 className="text-7xl font-bold leading-[0.95] mb-8">
+        Performance.
+        <br />
+        Security.
+        <br />
+        Growth.
+      </h1>
 
-        <div className="border border-gray-800 p-6 rounded-xl">
-          <h2 className="text-4xl font-bold text-yellow-500">2021</h2>
-          <p className="text-gray-300 mt-2">Established</p>
-        </div>
+      <p className="text-lg text-gray-200 mb-8 leading-8">
+        Southern Stock delivers enterprise IT solutions, cybersecurity,
+        networking, cloud infrastructure, software development and
+        managed services that help businesses scale with confidence.
+      </p>
 
-      </section>
+      <div className="flex gap-4">
+        <a
+          href="#services"
+          className="bg-blue-600 hover:bg-blue-700 transition px-8 py-4 rounded-xl font-semibold"
+        >
+          Explore Solutions →
+        </a>
 
-      {/* SERVICES SECTION */}
-      <section
-        id="services"
-        className="px-10 py-24 bg-[#071028]"
-      >
+        <a
+          href="#contact"
+          className="border border-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-black transition"
+        >
+          Let&apos;s Talk
+        </a>
+      </div>
+    </div>
 
-        <div className="max-w-7xl mx-auto">
+    {/* RIGHT SIDE CARDS */}
+    <div className="grid grid-cols-2 gap-6 translate-y-[-20px]">
 
-          <p className="text-yellow-500 uppercase tracking-widest mb-4">
-            Our Core Services
-          </p>
+      <a 
+        href="/services/cloud-infrastructure" 
+         className="backdrop-blur-md bg-white/10 border border-white/20 rounded-[28px] p-8 text-white hover:scale-105 transition">
+        <h3 className="text-3xl font-bold mb-4">
+          Cloud & Infrastructure
+        </h3>
 
-          <h2 className="text-5xl font-bold mb-16">
-            Comprehensive IT Solutions
+        <p className="text-gray-200 mb-6">
+          Modern, scalable and secure cloud solutions.
+        </p>
+
+        <span className="text-3xl">→</span>
+      </a>
+
+      <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-[28px] p-8 text-white hover:scale-105 transition mt-10">
+        <h3 className="text-3xl font-bold mb-4">
+          Cyber Security
+        </h3>
+
+        <p className="text-gray-200 mb-6">
+          Advanced protection for business systems.
+        </p>
+
+        <span className="text-3xl">→</span>
+      </div>
+
+      <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-[28px] p-8 text-white hover:scale-105 transition">
+        <h3 className="text-3xl font-bold mb-4">
+          Networking
+        </h3>
+
+        <p className="text-gray-200 mb-6">
+          Enterprise networking infrastructure.
+        </p>
+
+        <span className="text-3xl">→</span>
+      </div>
+
+      <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-[28px] p-8 text-white hover:scale-105 transition mt-10">
+        <h3 className="text-3xl font-bold mb-4">
+          Managed Services
+        </h3>
+
+        <p className="text-gray-200 mb-6">
+          24/7 support and monitoring.
+        </p>
+
+        <span className="text-3xl">→</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+{/* TRUSTED BRANDS */}
+<section 
+  id="partners"
+  className="bg-white py-16"
+>
+
+  <div className="max-w-[1400px] mx-auto px-10">
+
+    <div className="flex items-center gap-6 mb-10">
+      <div className="h-[1px] flex-1 bg-gray-300"></div>
+
+      <p className="text-blue-700 font-semibold tracking-[3px] uppercase text-sm">
+        Trusted By Global Technology Leaders
+      </p>
+
+      <div className="h-[1px] flex-1 bg-gray-300"></div>
+    </div>
+
+    {/* LOGOS */}
+    <div className="grid grid-cols-4 md:grid-cols-8 gap-8 items-center justify-items-center mb-12">
+
+      <img src="/microsoft.png" alt="Microsoft" className="h-10 object-contain" />
+      <img src="/dell.png" alt="Dell" className="h-10 object-contain" />
+      <img src="/aws.png" alt="AWS" className="h-10 object-contain" />
+      <img src="/fortinet.png" alt="Fortinet" className="h-10 object-contain" />
+      <img src="/cisco.png" alt="Cisco" className="h-10 object-contain" />
+      <img src="/nvidia.png" alt="Nvidia" className="h-10 object-contain" />
+      <img src="/intel.png" alt="Intel" className="h-10 object-contain" />
+      <img src="/ibm.png" alt="IBM" className="h-10 object-contain" />
+
+    </div>
+
+    {/* COMPLIANCE */}
+<div className="border rounded-[30px] p-8 grid md:grid-cols-5 gap-6 bg-white shadow-sm">
+
+  {/* Proudly SA */}
+  <div className="flex gap-4 items-start border-r pr-4">
+    <img
+      src="/proudlysa.png"
+      alt="Proudly SA"
+      className="w-16 h-16 object-contain"
+    />
+
+    <div>
+      <h3 className="font-bold text-lg">
+        Proudly South African
+      </h3>
+
+      <p className="text-gray-600 text-sm">
+        Building solutions. Empowering our nation.
+      </p>
+    </div>
+  </div>
+
+  {/* CSD */}
+  <div className="flex gap-4 items-start border-r pr-4">
+    <img
+      src="/csd.png"
+      alt="CSD"
+      className="w-16 h-16 object-contain"
+    />
+
+    <div>
+      <h3 className="font-bold text-lg">
+        CSD Registered
+      </h3>
+
+      <p className="text-gray-600 text-sm">
+        Central Supplier Database compliant.
+      </p>
+    </div>
+  </div>
+
+  {/* FIC */}
+  <div className="flex gap-4 items-start border-r pr-4">
+    <img
+      src="/fic.png"
+      alt="FIC"
+      className="w-16 h-16 object-contain"
+    />
+
+    <div>
+      <h3 className="font-bold text-lg">
+        FIC Compliant
+      </h3>
+
+      <p className="text-gray-600 text-sm">
+        Financial Intelligence Centre compliant.
+      </p>
+    </div>
+  </div>
+
+  {/* SARS */}
+  <div className="flex gap-4 items-start border-r pr-4">
+    <img
+      src="/sars.png"
+      alt="SARS"
+      className="w-16 h-16 object-contain"
+    />
+
+    <div>
+      <h3 className="font-bold text-lg">
+        SARS Tax Compliant
+      </h3>
+
+      <p className="text-gray-600 text-sm">
+        South African Revenue Service compliant.
+      </p>
+    </div>
+  </div>
+
+  {/* POPIA */}
+  <div className="flex gap-4 items-start">
+    <img
+      src="/popia.png"
+      alt="POPIA"
+      className="w-16 h-16 object-contain"
+    />
+
+    <div>
+      <h3 className="font-bold text-lg">
+        POPIA Compliant
+      </h3>
+
+      <p className="text-gray-600 text-sm">
+        Your data. Our priority.
+      </p>
+    </div>
+  </div>
+
+</div>
+  </div>
+</section>
+{/* STATS SECTION */}
+<section className="bg-white py-10">
+
+  <div className="max-w-[1400px] mx-auto px-10">
+
+    <div className="bg-gradient-to-r from-blue-950 to-blue-900 rounded-[28px] px-12 py-10 text-white">
+
+      <div className="grid lg:grid-cols-6 gap-8 items-center">
+
+        {/* 15+ YEARS */}
+        <div className="border-r border-white/20 pr-8">
+          <h2 className="text-6xl font-bold mb-2">
+            15+
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-
-            <div className="bg-[#0c1735] p-8 rounded-2xl border border-gray-800 hover:border-yellow-500 transition">
-              <h3 className="text-2xl font-bold mb-4 text-yellow-500">
-                Website Development
-              </h3>
-
-              <p className="text-gray-300 leading-relaxed">
-                Professional modern websites built for businesses,
-                government institutions and startups.
-              </p>
-            </div>
-
-            <div className="bg-[#0c1735] p-8 rounded-2xl border border-gray-800 hover:border-yellow-500 transition">
-              <h3 className="text-2xl font-bold mb-4 text-yellow-500">
-                Software Development
-              </h3>
-
-              <p className="text-gray-300 leading-relaxed">
-                Enterprise software systems, dashboards and custom
-                business automation solutions.
-              </p>
-            </div>
-
-            <div className="bg-[#0c1735] p-8 rounded-2xl border border-gray-800 hover:border-yellow-500 transition">
-              <h3 className="text-2xl font-bold mb-4 text-yellow-500">
-                Mobile App Development
-              </h3>
-
-              <p className="text-gray-300 leading-relaxed">
-                Android and iOS applications with scalable and secure
-                cloud-based architecture.
-              </p>
-            </div>
-
-            <div className="bg-[#0c1735] p-8 rounded-2xl border border-gray-800 hover:border-yellow-500 transition">
-              <h3 className="text-2xl font-bold mb-4 text-yellow-500">
-                Cybersecurity
-              </h3>
-
-              <p className="text-gray-300 leading-relaxed">
-                Antivirus deployment, endpoint security and advanced
-                cybersecurity protection services.
-              </p>
-            </div>
-
-            <div className="bg-[#0c1735] p-8 rounded-2xl border border-gray-800 hover:border-yellow-500 transition">
-              <h3 className="text-2xl font-bold mb-4 text-yellow-500">
-                IT Outsourcing
-              </h3>
-
-              <p className="text-gray-300 leading-relaxed">
-                Dedicated remote developers and outsourced IT teams
-                for scalable business operations.
-              </p>
-            </div>
-
-            <div className="bg-[#0c1735] p-8 rounded-2xl border border-gray-800 hover:border-yellow-500 transition">
-              <h3 className="text-2xl font-bold mb-4 text-yellow-500">
-                IT Training
-              </h3>
-
-              <p className="text-gray-300 leading-relaxed">
-                Professional IT training and technology education
-                services for individuals and businesses.
-              </p>
-            </div>
-
-          </div>
-
+          <p className="uppercase text-sm tracking-[2px] text-blue-200">
+            Years
+          </p>
         </div>
 
-      </section>
-
-      {/* ABOUT SECTION */}
-      <section
-        id="about"
-        className="px-10 py-24 bg-[#0c1735]"
-      >
-
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-
-          <div>
-
-            <p className="text-yellow-500 uppercase tracking-widest mb-4">
-              About Southern Stock
-            </p>
-
-            <h2 className="text-5xl font-bold leading-tight mb-8">
-              Delivering Excellence Through Technology
-            </h2>
-
-            <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              Southern Stock (Pty) Ltd is a South African-based IT outsourcing
-              and software development company established in May 2021.
-            </p>
-
-            <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              We partner with experienced software engineers and IT specialists
-              from India with over 20 years of combined industry experience
-              delivering secure, scalable and innovative digital solutions.
-            </p>
-
-            <p className="text-gray-300 text-lg leading-relaxed">
-              Our mission is to help businesses, startups and government
-              institutions modernize operations through world-class technology.
-            </p>
-
-          </div>
-
-          <div className="bg-[#071028] border border-gray-800 rounded-3xl p-10">
-
-            <h3 className="text-3xl font-bold mb-8 text-yellow-500">
-              Why Choose Us
-            </h3>
-
-            <div className="space-y-6">
-
-              <div>
-                <h4 className="font-bold text-xl mb-2">
-                  20+ Years Experience
-                </h4>
-
-                <p className="text-gray-300">
-                  Skilled developers with global enterprise experience.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-bold text-xl mb-2">
-                  Global IT Partnership
-                </h4>
-
-                <p className="text-gray-300">
-                  South African leadership partnered with expert Indian developers.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-bold text-xl mb-2">
-                  Secure & Scalable
-                </h4>
-
-                <p className="text-gray-300">
-                  Enterprise-level security and scalable modern systems.
-                </p>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* INDUSTRIES SECTION */}
-      <section
-        id="industries"
-        className="px-10 py-24 bg-[#071028]"
-      >
-
-        <div className="max-w-7xl mx-auto text-center">
-
-          <p className="text-yellow-500 uppercase tracking-widest mb-4">
-            Industries We Serve
+        {/* EXPERIENCE */}
+        <div className="lg:col-span-2 border-r border-white/20 pr-8">
+          <p className="uppercase tracking-[3px] text-blue-300 text-sm mb-3">
+            Specialist Experience
           </p>
 
-          <h2 className="text-5xl font-bold mb-16">
-            Technology Solutions Across Multiple Industries
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-
-            <div className="bg-[#0c1735] border border-gray-800 rounded-2xl p-10 hover:border-yellow-500 transition">
-              <h3 className="text-2xl font-bold text-yellow-500 mb-4">
-                Finance & FinTech
-              </h3>
-
-              <p className="text-gray-300 leading-relaxed">
-                Secure financial systems, fintech platforms and digital payment solutions.
-              </p>
-            </div>
-
-            <div className="bg-[#0c1735] border border-gray-800 rounded-2xl p-10 hover:border-yellow-500 transition">
-              <h3 className="text-2xl font-bold text-yellow-500 mb-4">
-                Education & Training
-              </h3>
-
-              <p className="text-gray-300 leading-relaxed">
-                E-learning systems, student portals and professional IT training services.
-              </p>
-            </div>
-
-            <div className="bg-[#0c1735] border border-gray-800 rounded-2xl p-10 hover:border-yellow-500 transition">
-              <h3 className="text-2xl font-bold text-yellow-500 mb-4">
-                Government
-              </h3>
-
-              <p className="text-gray-300 leading-relaxed">
-                Digital transformation systems and secure government IT infrastructure.
-              </p>
-            </div>
-
-          </div>
-
+          <p className="text-gray-300 leading-7">
+            Over 15 years of combined specialist
+            experience delivering enterprise
+            technology solutions.
+          </p>
         </div>
 
-      </section>
+        {/* Projects */}
+        <div className="text-center">
+          <h3 className="text-4xl font-bold">
+            150+
+          </h3>
 
-      {/* CONTACT SECTION */}
-      <section
-        id="contact"
-        className="px-10 py-24 bg-[#0c1735]"
-      >
+          <p className="text-blue-200 mt-2">
+            Projects Delivered
+          </p>
+        </div>
 
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
+        {/* Satisfaction */}
+        <div className="text-center">
+          <h3 className="text-4xl font-bold">
+            98%
+          </h3>
 
-          <div>
+          <p className="text-blue-200 mt-2">
+            Client Satisfaction
+          </p>
+        </div>
 
-            <p className="text-yellow-500 uppercase tracking-widest mb-4">
-              Contact Us
-            </p>
+        {/* Support */}
+        <div className="text-center">
+          <h3 className="text-4xl font-bold">
+            24/7
+          </h3>
 
-            <h2 className="text-5xl font-bold mb-8">
-              Let’s Build The Future Together
-            </h2>
+          <p className="text-blue-200 mt-2">
+            Support & Monitoring
+          </p>
+        </div>
 
-            <p className="text-gray-300 text-lg leading-relaxed mb-10">
-              Contact Southern Stock for professional software development,
-              cybersecurity, IT outsourcing and enterprise technology solutions.
-            </p>
+      </div>
 
-          </div>
+      {/* Bottom Clients */}
+      <div className="flex justify-center mt-8 pt-6 border-t border-white/10">
 
-          <div className="bg-[#071028] border border-gray-800 rounded-3xl p-10">
+        <div className="text-center">
+          <h3 className="text-4xl font-bold">
+            100+
+          </h3>
 
-            <h3 className="text-3xl font-bold mb-8">
-              Send Us A Message
+          <p className="text-blue-200 mt-2">
+            Enterprise Clients
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+{/* OUR SERVICES */}
+<section 
+  id="services"
+  className="bg-white py-20"
+>
+
+  <div className="max-w-[1400px] mx-auto px-10">
+
+    {/* Title */}
+    <div className="text-center mb-14">
+
+      <p className="uppercase tracking-[4px] text-blue-700 text-sm font-semibold">
+        OUR SERVICES
+      </p>
+
+      <h2 className="text-5xl font-bold text-gray-900 mt-3">
+        Technology Solutions
+      </h2>
+
+      <p className="text-gray-500 mt-4 max-w-[700px] mx-auto">
+        Enterprise-grade IT services designed to help businesses
+        scale securely and efficiently.
+      </p>
+
+    </div>
+
+    {/* Cards */}
+    <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+
+      {/* Software Development */}
+      <div className="bg-white border border-gray-200 rounded-[24px] p-8 hover:shadow-xl transition duration-300 hover:-translate-y-2">
+
+        <div className="text-blue-700 text-5xl mb-5">
+          💻
+        </div>
+
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          Software Development
+        </h3>
+
+        <p className="text-gray-600 leading-7">
+          Custom software, websites, mobile applications
+          and enterprise systems.
+        </p>
+
+        <button className="mt-6 text-blue-700 font-semibold">
+          Learn More →
+        </button>
+
+      </div>
+
+      {/* PoC Development */}
+      <div className="bg-white border border-gray-200 rounded-[24px] p-8 hover:shadow-xl transition duration-300 hover:-translate-y-2">
+
+        <div className="text-blue-700 text-5xl mb-5">
+          🚀
+        </div>
+
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          PoC Development
+        </h3>
+
+        <p className="text-gray-600 leading-7">
+          Rapid prototype and High-fidelity PoC
+          development for scalable success.
+        </p>
+
+        <button className="mt-6 text-blue-700 font-semibold">
+          Learn More →
+        </button>
+
+      </div>
+
+      {/* Cybersecurity */}
+      <div className="bg-white border border-gray-200 rounded-[24px] p-8 hover:shadow-xl transition duration-300 hover:-translate-y-2">
+
+        <div className="text-blue-700 text-5xl mb-5">
+          🛡️
+        </div>
+
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          Cybersecurity
+        </h3>
+
+        <p className="text-gray-600 leading-7">
+          Threat prevention, security testing,
+          compliance and monitoring.
+        </p>
+
+        <button className="mt-6 text-blue-700 font-semibold">
+          Learn More →
+        </button>
+
+      </div>
+
+      {/* Cloud */}
+      <div className="bg-white border border-gray-200 rounded-[24px] p-8 hover:shadow-xl transition duration-300 hover:-translate-y-2">
+
+        <div className="text-blue-700 text-5xl mb-5">
+          ☁️
+        </div>
+
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          Cloud Infrastructure
+        </h3>
+
+        <p className="text-gray-600 leading-7">
+          Cloud migration, hosting,
+          deployment and enterprise solutions.
+        </p>
+
+        <button className="mt-6 text-blue-700 font-semibold">
+          Learn More →
+        </button>
+
+      </div>
+
+      {/* Managed IT */}
+      <div className="bg-white border border-gray-200 rounded-[24px] p-8 hover:shadow-xl transition duration-300 hover:-translate-y-2">
+
+        <div className="text-blue-700 text-5xl mb-5">
+          🖥️
+        </div>
+
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          Managed IT Services
+        </h3>
+
+        <p className="text-gray-600 leading-7">
+          24/7 monitoring, support
+          and complete IT system management.
+        </p>
+
+        <button className="mt-6 text-blue-700 font-semibold">
+          Learn More →
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+{/* INDUSTRIES + PROJECTS */}
+<section 
+  id="industries"
+  className="bg-[#f8fafc] py-20"
+>
+
+  <div className="max-w-[1400px] mx-auto px-10 grid lg:grid-cols-2 gap-10">
+
+    {/* INDUSTRIES */}
+    <div className="bg-white rounded-[28px] p-10 shadow-sm">
+
+      <div id="industries" className="flex items-center gap-4 mb-10">
+        <div className="h-[2px] bg-gray-200 flex-1"></div>
+
+        <h2 className="text-blue-700 font-bold uppercase tracking-[3px] text-sm whitespace-nowrap">
+          Industries We Serve
+        </h2>
+
+        <div className="h-[2px] bg-gray-200 flex-1"></div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-8">
+
+        <div>
+          <div className="text-5xl mb-3">🏥</div>
+          <h3 className="font-bold text-xl text-gray-900">
+            Healthcare
+          </h3>
+          <p className="text-gray-600 mt-2">
+            Secure systems and digital
+            transformation for healthcare.
+          </p>
+        </div>
+
+        <div>
+          <div className="text-5xl mb-3">🏦</div>
+          <h3 className="font-bold text-xl text-gray-900">
+            Finance
+          </h3>
+          <p className="text-gray-600 mt-2">
+            Fintech solutions, compliance
+            and secure financial systems.
+          </p>
+        </div>
+
+        <div>
+          <div className="text-5xl mb-3">🏛️</div>
+          <h3 className="font-bold text-xl text-gray-900">
+            Government
+          </h3>
+          <p className="text-gray-600 mt-2">
+            Secure infrastructure and
+            digital solutions for public sector.
+          </p>
+        </div>
+
+        <div>
+          <div className="text-5xl mb-3">🏢</div>
+          <h3 className="font-bold text-xl text-gray-900">
+            Enterprise
+          </h3>
+          <p className="text-gray-600 mt-2">
+            End-to-end IT solutions
+            for large organizations.
+          </p>
+        </div>
+
+      </div>
+
+      <button className="mt-10 text-blue-700 font-semibold">
+        View All Industries →
+      </button>
+
+    </div>
+
+    {/* FEATURED PROJECTS */}
+    <div 
+      id="projects"
+      className="bg-white rounded-[28px] p-10 shadow-sm"
+    >
+
+      <div className="flex items-center gap-4 mb-10">
+        <div className="h-[2px] bg-gray-200 flex-1"></div>
+
+        <h2 className="text-blue-700 font-bold uppercase tracking-[3px] text-sm whitespace-nowrap">
+          Featured Projects
+        </h2>
+
+        <div className="h-[2px] bg-gray-200 flex-1"></div>
+      </div>
+
+      <div className="grid md:grid-cols-3 gap-5">
+
+        {/* Project 1 */}
+        <div className="overflow-hidden rounded-[20px] border border-gray-200 hover:shadow-xl transition">
+
+          <img
+            src="/healthcare.jpg"
+            alt="Healthcare"
+           className="h-[180px] w-full object-cover rounded-t-[20px]"
+          />
+
+          <div className="p-5">
+            <h3 className="font-bold text-lg">
+              Healthcare Platform
             </h3>
 
-            <form className="space-y-6">
-
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full bg-[#0c1735] border border-gray-700 rounded-lg px-5 py-4 text-white outline-none"
-              />
-
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="w-full bg-[#0c1735] border border-gray-700 rounded-lg px-5 py-4 text-white outline-none"
-              />
-
-              <textarea
-                placeholder="Your Message"
-                rows={5}
-                className="w-full bg-[#0c1735] border border-gray-700 rounded-lg px-5 py-4 text-white outline-none"
-              ></textarea>
-
-              <button
-                className="bg-yellow-500 text-black px-8 py-4 rounded-lg font-semibold hover:bg-yellow-400 transition w-full"
-              >
-                Send Message
-              </button>
-
-            </form>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* FOOTER */}
-      <footer className="bg-[#071028] border-t border-gray-800 px-10 py-10">
-
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-
-          <div>
-
-            <h2 className="text-2xl font-bold text-yellow-500">
-              SOUTHERN STOCK
-            </h2>
-
-            <p className="text-gray-400 mt-2">
-              Innovative IT Solutions For Modern Businesses.
+            <p className="text-gray-600 text-sm mt-2">
+              Secure patient management
+              and digital healthcare solution.
             </p>
 
-          </div>
-
-          <div className="text-gray-400 text-sm">
-            © 2026 Southern Stock (Pty) Ltd. All rights reserved.
+            <button className="text-blue-700 font-semibold mt-4">
+              View Case Study →
+            </button>
           </div>
 
         </div>
 
-      </footer>
+        {/* Project 2 */}
+        <div className="overflow-hidden rounded-[20px] border border-gray-200 hover:shadow-xl transition">
 
+          <img
+            src="/fintech.jpg"
+            alt="Fintech"
+            className="h-[180px] w-full object-cover"
+          />
+
+          <div className="p-5">
+            <h3 className="font-bold text-lg">
+              Fintech PoC
+            </h3>
+
+            <p className="text-gray-600 text-sm mt-2">
+              Scalable fintech PoC
+              for investment management.
+            </p>
+
+            <button className="text-blue-700 font-semibold mt-4">
+              View Case Study →
+            </button>
+          </div>
+
+        </div>
+
+        {/* Project 3 */}
+        <div className="overflow-hidden rounded-[20px] border border-gray-200 hover:shadow-xl transition">
+
+          <img
+            src="/cloud.jpg"
+            alt="Cloud"
+            className="h-[180px] w-full object-cover"
+          />
+
+          <div className="p-5">
+            <h3 className="font-bold text-lg">
+              Cloud Migration
+            </h3>
+
+            <p className="text-gray-600 text-sm mt-2">
+              Enterprise cloud migration
+              and infrastructure modernization.
+            </p>
+
+            <button className="text-blue-700 font-semibold mt-4">
+              View Case Study →
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+{/* ABOUT SOUTHERN STOCK */}
+<section 
+  id="about"
+  className="py-20 bg-white"
+>
+
+  <div className="max-w-[1400px] mx-auto px-10">
+
+    <div  id="about" className="bg-gradient-to-r from-[#021B4D] to-[#063BBD] rounded-[32px] overflow-hidden grid lg:grid-cols-3">
+
+      {/* LEFT IMAGE */}
+      <div className="lg:col-span-1 flex items-center justify-center p-8 bg-[#021B4D]">
+
+  <img
+    src="/office.jpg"
+    alt="Southern Stock Office"
+    className="w-[90%] h-[320px] object-cover rounded-[24px] shadow-2xl"
+  />
+
+</div>
+
+      {/* MIDDLE CONTENT */}
+      <div className="lg:col-span-1 p-12 text-white">
+
+        <p className="uppercase tracking-[4px] text-blue-300 text-sm font-semibold mb-4">
+          About Southern Stock
+        </p>
+
+        <h2 className="text-4xl font-bold mb-6">
+          Enterprise Technology Solutions
+        </h2>
+
+        <p className="text-gray-300 leading-8 mb-8">
+          Southern Stock Technology Solutions is a South African IT company
+          focused on software development, PoC building, cybersecurity,
+          enterprise systems, cloud infrastructure and managed IT services.
+          We help businesses scale securely through modern technology.
+        </p>
+
+        {/* STATS */}
+        <div className="grid grid-cols-2 gap-5">
+
+          <div>
+            <h3 className="text-3xl font-bold text-white">
+              2021
+            </h3>
+
+            <p className="text-gray-300">
+              Founded
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-3xl font-bold text-white">
+              15+
+            </h3>
+
+            <p className="text-gray-300">
+              Specialist Engineers
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-3xl font-bold text-white">
+              150+
+            </h3>
+
+            <p className="text-gray-300">
+              Projects
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-3xl font-bold text-white">
+              SA
+            </h3>
+
+            <p className="text-gray-300">
+              Proudly South African
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* RIGHT CTA */}
+      <div className="bg-[#0A4DFF] p-12 flex flex-col justify-center text-white">
+
+        <h2 className="text-4xl font-bold mb-5">
+          Let’s Build Something Great
+        </h2>
+
+        <p className="text-blue-100 leading-8 mb-8">
+          Partner with Southern Stock for secure,
+          scalable and innovative technology solutions.
+        </p>
+
+        <button className="bg-white text-blue-700 font-semibold px-8 py-4 rounded-xl w-fit hover:scale-105 transition">
+          Let’s Talk →
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+{/* CONTACT SECTION */}
+<section
+  id="contact"
+  className="py-24 bg-gray-50"
+>
+  <div  id="contact" className="max-w-5xl mx-auto px-6">
+
+    <div className="text-center mb-14">
+      <p className="uppercase tracking-[4px] text-blue-600 font-semibold">
+        CONTACT US
+      </p>
+
+      <h2 className="text-5xl font-bold text-gray-900 mt-3">
+        Let’s Build Something Great
+      </h2>
+
+      <p className="text-gray-500 mt-4 text-lg">
+        Have a project in mind? Contact Southern Stock Technology Solutions.
+      </p>
+    </div>
+
+    <div className="bg-white rounded-[30px] shadow-xl p-10 border border-gray-100">
+
+      <form className="grid md:grid-cols-2 gap-6">
+
+        <input
+          type="text"
+          placeholder="Full Name"
+          className="border border-gray-300 rounded-xl p-4 outline-none focus:border-blue-600"
+        />
+
+        <input
+          type="email"
+          placeholder="Email Address"
+          className="border border-gray-300 rounded-xl p-4 outline-none focus:border-blue-600"
+        />
+
+        <input
+          type="text"
+          placeholder="Company Name"
+          className="border border-gray-300 rounded-xl p-4 outline-none focus:border-blue-600"
+        />
+
+        <input
+          type="tel"
+          placeholder="Phone Number"
+          className="border border-gray-300 rounded-xl p-4 outline-none focus:border-blue-600"
+        />
+
+        <textarea
+          placeholder="Tell us about your project..."
+          rows={6}
+          className="md:col-span-2 border border-gray-300 rounded-xl p-4 outline-none focus:border-blue-600"
+        />
+
+        <button
+          type="submit"
+          className="md:col-span-2 bg-blue-600 hover:bg-blue-700 transition text-white py-4 rounded-xl font-semibold text-lg"
+        >
+          Submit Inquiry →
+        </button>
+
+      </form>
+    </div>
+  </div>
+</section>
+{/* FOOTER */}
+<footer 
+  id="contact"
+  className="bg-[#020b24] text-white pt-14 pb-6 mt-16"
+>
+  <div className="max-w-[1400px] mx-auto px-6 grid md:grid-cols-[1.4fr_1fr_1fr_1fr_1.1fr] gap-10 items-start">
+    {/* LOGO + DESCRIPTION */}
+    <div>
+      <div className="flex items-center gap-3 mb-4">
+        <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center font-bold text-xl">
+          <img src="/logo.png" alt="Southern Stock Logo" className="w-full h-full object-contain" />
+        </div>
+
+        <div>
+          <h2 className="font-bold text-xl">
+            SOUTHERN STOCK
+          </h2>
+          <p className="text-sm text-blue-300">
+            Technology Solutions
+          </p>
+        </div>
+      </div>
+
+      <p className="text-gray-400 text-sm leading-7">
+        Premium IT solutions. Secure. Scalable.
+        Innovative. Proudly South African.
+      </p>
+
+     
+    </div>
+
+    {/* QUICK LINKS */}
+    <div>
+      <h3 className="font-semibold mb-5 uppercase text-sm tracking-wider">
+        Quick Links
+      </h3>
+       <ul className="space-y-3 text-gray-400">
+
+  <li>
+    <a href="#home" className="hover:text-white cursor-pointer">
+      Home
+    </a>
+  </li>
+
+  <li>
+    <a href="#services" className="hover:text-white cursor-pointer">
+      Services
+    </a>
+  </li>
+
+  <li>
+    <a href="#industries" className="hover:text-white cursor-pointer">
+      Industries
+    </a>
+  </li>
+
+  <li>
+    <a href="#projects" className="hover:text-white cursor-pointer">
+      Projects
+    </a>
+  </li>
+
+  <li>
+    <a href="#partners" className="hover:text-white cursor-pointer">
+      Partners
+    </a>
+  </li>
+
+</ul>
+    </div>
+
+    {/* COMPANY */}
+    <div>
+      <h3 className="font-semibold mb-5 uppercase text-sm tracking-wider">
+        Company
+      </h3>
+       <ul className="space-y-3 text-gray-400">
+
+  <li>
+    <a href="#about" className="hover:text-white cursor-pointer">
+      About Us
+    </a>
+  </li>
+
+  <li>
+    <a href="/team" className="hover:text-white cursor-pointer">
+      Our Team
+    </a>
+  </li>
+
+  <li>
+    <a href="/careers" className="hover:text-white cursor-pointer">
+      Careers
+    </a>
+  </li>
+
+  <li>
+    <a href="/news" className="hover:text-white cursor-pointer">
+      News
+    </a>
+  </li>
+
+  <li>
+    <a href="#contact" className="hover:text-white cursor-pointer">
+      Contact
+    </a>
+  </li>
+
+</ul>
+    </div>
+  {/* SERVICES */}
+  <div>
+    <h3 className="font-semibold mb-5 uppercase text-sm tracking-wider">
+      Services
+    </h3>
+
+   <ul className="space-y-3 text-gray-400">
+
+  <li>
+    <a href="#services" className="hover:text-white transition">
+      Cybersecurity
+    </a>
+  </li>
+
+  <li>
+    <a href="#services" className="hover:text-white transition">
+      Cloud Solutions
+    </a>
+  </li>
+
+  <li>
+    <a href="#services" className="hover:text-white transition">
+      Software Development
+    </a>
+  </li>
+
+  <li>
+    <a href="#services" className="hover:text-white transition">
+      Managed IT Services
+    </a>
+  </li>
+
+  <li>
+    <a href="#services" className="hover:text-white transition">
+      PoC Development
+    </a>
+  </li>
+
+</ul>
+  </div>
+
+  {/* CONTACT */}
+  <div className="justify-self-end text-left">
+    <h3 className="font-semibold mb-5 uppercase text-sm tracking-wider">
+      Contact Us
+    </h3>
+
+    <div className="space-y-4 text-gray-400 text-sm">
+      <p>📧 info@southernstock.co.za</p>
+      <p>📍 South Africa</p>
+    </div>
+
+    <a
+      href="#contact"
+      className="inline-block mt-6 bg-blue-600 hover:bg-blue-700 transition px-5 py-3 rounded-xl font-semibold"
+    >
+      Schedule a Call →
+    </a>
+  </div>
+  </div>
+
+{/* BOTTOM BAR */}
+  <div className="border-t border-white/10 mt-12 pt-6 text-center text-sm text-gray-500">
+    © 2026 Southern Stock (Pty) Ltd. All Rights Reserved.
+    <span className="mx-2">|</span>
+    
+    <a href="/privacy-policy" className="hover:text-white">
+  Privacy Policy
+</a>
+
+    <span className="mx-2">|</span>
+
+    <a href="/terms" className="hover:text-white">
+      Terms & Conditions
+    </a>
+  </div>
+</footer>
     </main>
   );
 }
