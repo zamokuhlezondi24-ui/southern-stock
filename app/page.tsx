@@ -6,18 +6,18 @@ export default function Home() {
 
       {/* NAVBAR */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <div className="max-w-[1400px] mx-auto px-10 py-5 flex items-center justify-between">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-10 py-4 md:py-5 flex flex-col md:flex-row items-center justify-between gap-4">
 
           {/* LOGO */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 md:gap-4">
             <img
              src="/logo.png"
              alt="Southern Stock Logo"
-             className="w-20 h-auto object-contain"
+             className="w-12 md:w-20 h-auto object-contain"
            />
 
             <div>
-              <h1 className="text-2xl font-bold text-black tracking-wide">
+              <h1 className="text-lg md:text-2xl font-bold text-black tracking-wide">
                 SOUTHERN STOCK
               </h1>
               <p className="text-blue-600 text-sm">
@@ -62,7 +62,7 @@ export default function Home() {
           {/* BUTTON */}
           <a
   href="#contact"
-  className="bg-blue-600 hover:bg-blue-700 transition px-8 py-4 rounded-xl text-white font-semibold"
+  className="bg-blue-600 hover:bg-blue-700 transition px-5 py-3 md:px-8 md:py-4 rounded-xl font-semibold text-sm md:text-lg w-full md:w-auto text-center"
 >
   Let's Talk →
 </a>
@@ -94,7 +94,7 @@ export default function Home() {
         TECHNOLOGY THAT DRIVES BUSINESS
       </p>
 
-      <h1 className="text-7xl font-bold leading-[0.95] mb-8">
+      <h1 className="text-5xl md:text-8xl font-bold leading-tight">
         Performance.
         <br />
         Security.
@@ -126,7 +126,7 @@ export default function Home() {
     </div>
 
     {/* RIGHT SIDE CARDS */}
-    <div className="grid grid-cols-2 gap-6 translate-y-[-20px]">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 translate-y-[-20px]">
 
       <a 
         href="/services/cloud-infrastructure" 
