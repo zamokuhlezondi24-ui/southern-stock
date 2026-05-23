@@ -62,7 +62,7 @@ export default function Home() {
           {/* BUTTON */}
           <a
   href="#contact"
-  className="bg-blue-600 hover:bg-blue-700 transition px-5 py-3 md:px-8 md:py-4 rounded-xl font-semibold text-sm md:text-lg w-full md:w-auto text-center"
+  className="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-xl font-semibold text-base md:text-lg w-full md:w-auto text-center md:px-8 md:py-4"
 >
   Let's Talk →
 </a>
@@ -71,7 +71,7 @@ export default function Home() {
         {/* HERO */}
 <section 
   id="home"
-  className="relative min-h-[720px] overflow-hidden"
+  className="relative min-h-screen py-16 overflow-hidden"
 >
 
   {/* MOVING BACKGROUND */}
@@ -94,7 +94,7 @@ export default function Home() {
         TECHNOLOGY THAT DRIVES BUSINESS
       </p>
 
-      <h1 className="text-5xl md:text-8xl font-bold leading-tight">
+      <h1 className="text-4xl sm:text-5xl md:text-8xl font-bold leading-tight">
         Performance.
         <br />
         Security.
@@ -108,7 +108,7 @@ export default function Home() {
         managed services that help businesses scale with confidence.
       </p>
 
-      <div className="flex gap-4">
+      <div className="flex flex-col sm:flex-row gap-4 mt-8">
         <a
           href="#services"
           className="bg-blue-600 hover:bg-blue-700 transition px-8 py-4 rounded-xl font-semibold"
