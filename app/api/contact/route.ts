@@ -1,11 +1,13 @@
+import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-export async function POST(req) {
+export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
 
     const { name, email, company, phone, message } = body;
 
+    // ZOHO SMTP CONFIG
     const transporter = nodemailer.createTransport({
       host: "smtppro.zoho.com",
       port: 465,
@@ -18,74 +20,103 @@ export async function POST(req) {
 
     // EMAIL TO SOUTHERN STOCK
     await transporter.sendMail({
-      from: `"Southern Stock Website" <info@southernstock.co.za>`,
+      from: `"Southern Stock Website" <${process.env.ZOHO_USER}>`,
       to: "info@southernstock.co.za",
       subject: `New Website Enquiry - ${name}`,
       html: `
-        <h2>New Website Enquiry</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Company:</strong> ${company}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
+        <div style="font-family: Arial, sans-serif; padding: 20px;">
+          <h2 style="color:#2563eb;">
+            New Website Enquiry
+          </h2>
+
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Company:</strong> ${company}</p>
+          <p><strong>Phone:</strong> ${phone}</p>
+
+          <p>
+            <strong>Message:</strong>
+          </p>
+
+          <div style="background:#f5f5f5; padding:15px; border-radius:8px;">
+            ${message}
+          </div>
+        </div>
       `,
     });
 
     // AUTO RESPONSE TO CLIENT
     await transporter.sendMail({
-      from: `"Southern Stock" <info@southernstock.co.za>`,
+      from: `"Southern Stock" <${process.env.ZOHO_USER}>`,
       to: email,
       subject: "Thank You for Contacting Southern Stock",
       html: `
-        <div style="font-family:Arial,sans-serif;max-width:700px;margin:auto;padding:30px;border:1px solid #ddd;border-radius:10px;">
-          <h1>SOUTHERN STOCK</h1>
-          <p style="color:#2563eb;">Technology Solutions</p>
+        <div style="font-family: Arial, sans-serif; max-width: 700px; margin:auto; border:1px solid #eee; border-radius:10px; overflow:hidden;">
 
-          <hr>
+          <div style="padding:30px; background:#ffffff;">
+            <h1 style="margin:0; color:#111;">
+              SOUTHERN STOCK
+            </h1>
 
-          <p>Dear ${name},</p>
+            <p style="margin-top:5px; color:#2563eb;">
+              Technology Solutions
+            </p>
+          </div>
 
-          <p>
-            Thank you for contacting Southern Stock (Pty) Ltd.
-          </p>
+          <div style="height:5px; background:#2563eb;"></div>
 
-          <p>
-            We have successfully received your enquiry.
-            A member of our team will contact you shortly.
-          </p>
+          <div style="padding:30px;">
+            <h2>Hello ${name},</h2>
 
-          <p>
-            We appreciate your interest in Southern Stock
-            Technology Solutions.
-          </p>
+            <p>
+              Thank you for contacting
+              <strong>Southern Stock Technology Solutions</strong>.
+            </p>
 
-          <br>
+            <p>
+              We have received your enquiry and our team will
+              review it shortly.
+            </p>
 
-          <p>Kind Regards,</p>
-          <strong>Southern Stock Team</strong>
+            <p>
+              We appreciate your interest in our IT solutions,
+              software development, cybersecurity, cloud
+              infrastructure, and digital services.
+            </p>
 
-          <hr>
+            <p>
+              One of our team members will contact you soon.
+            </p>
 
-          <p>📧 info@southernstock.co.za</p>
-          <p>🌐 www.southernstock.co.za</p>
-          <p>📞 +27 68 512 3151</p>
+            <br />
 
-          <p style="color:#2563eb;">
-            INNOVATE • SECURE • SCALE
-          </p>
+            <p>
+              Best Regards,
+            </p>
+
+            <p>
+              <strong>Southern Stock Team</strong><br />
+              info@southernstock.co.za<br />
+              Durban, South Africa
+            </p>
+          </div>
+
+          <div style="background:#111827; color:white; text-align:center; padding:20px;">
+            Building Technology. Delivering Confidence.
+          </div>
         </div>
       `,
     });
 
-    return Response.json({
+    return NextResponse.json({
       success: true,
     });
-  } catch (error) {
-    console.error(error);
 
-    return Response.json(
-      { success: false },
+  } catch (error) {
+    console.error("EMAIL ERROR:", error);
+
+    return NextResponse.json(
+      { error: "Failed to send email" },
       { status: 500 }
     );
   }
