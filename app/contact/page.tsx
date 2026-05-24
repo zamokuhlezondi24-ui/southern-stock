@@ -24,6 +24,9 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    console.log("Form submitted");
+
     setLoading(true);
 
     try {
