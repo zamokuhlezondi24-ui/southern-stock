@@ -11,7 +11,7 @@ export async function POST(req) {
       port: 465,
       secure: true,
       auth: {
-        user: "info@southernstock.co.za",
+        user: process.env.ZOHO_USER,
         pass: process.env.ZOHO_PASSWORD,
       },
     });
